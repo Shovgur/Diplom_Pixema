@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "./Input.module.css"
 
 
-type InputProps = {
+type InputsProps = {
   value?: string;
   placeholder?: string;
   id?: string;
@@ -11,7 +11,7 @@ type InputProps = {
   onChange?: (event: any) => void;
 };
 
-const Input: FC<InputProps> = ({
+const Inputs: FC<InputsProps> = ({
   onChange,
   value,
   isError,
@@ -30,4 +30,4 @@ const Input: FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default Inputs;
