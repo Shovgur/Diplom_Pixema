@@ -1,15 +1,17 @@
 import React from "react";
-import Inputs from "./Components/Inputs";
+import { Provider } from "react";
 import "./App.css";
-
+import { store } from "redux";
+import Router from "./router";
 
 const App = () => {
-  return <div className="App"> П
-<Inputs
-
-
-/>
-   </div>;
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <Router></Router>
+      </div>
+    </Provider>
+  );
 };
 
 export default App;
