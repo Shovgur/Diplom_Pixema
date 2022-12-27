@@ -7,7 +7,6 @@ type InputProps = {
   placeholder?: string;
   id?: string;
   isError?: any;
-  autoComplete?: string;
   type?: string;
   onChange?: (event: any) => void;
 };
@@ -18,7 +17,6 @@ const Input: FC<InputProps> = ({
   isError,
   id,
   placeholder,
-  autoComplete = "off",
   type = "text",
 }) => {
   return (
@@ -27,7 +25,6 @@ const Input: FC<InputProps> = ({
       value={value}
       id={id}
       placeholder={placeholder}
-      autoComplete={autoComplete}
       type={type}
     />
   );
