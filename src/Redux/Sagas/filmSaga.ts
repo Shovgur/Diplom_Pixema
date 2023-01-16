@@ -1,5 +1,5 @@
 import { all, takeLatest, put, call } from "redux-saga/effects";
-import { PathEnum } from "../enums/enums";
+import { PathEnum } from "../../Enums/enums";
 import {
   loadSelectedFilm,
   loadFilms,
@@ -23,9 +23,21 @@ function* getSearchFilmsSaga(action: any) {
 function* getFilmsSaga(action: any) {
   const access_token = localStorage.getItem("access_token");
   const { isLoadMoreFilms, page, type, genre, country, order } = action.payload;
-  const { data, status } = yield call(getFilmsApi, access_token, page, type, genre, country, order);
+  const { data, status } = yield call(
+    getFilmsApi,
+    access_token,
+    page,
+    type,
+    genre,
+    country,
+    order
+  );
   if (status === 200) {
-    yield put(isLoadMoreFilms ? setMoreFilms(data.pagination.data) : setFilms(data.pagination.data));
+    yield put(
+      isLoadMoreFilms
+        ? setMoreFilms(data.pagination.data)
+        : setFilms(data.pagination.data)
+    );
   }
 }
 

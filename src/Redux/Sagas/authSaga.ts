@@ -1,8 +1,8 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { all, takeLatest, put, call } from "redux-saga/effects";
-import { PathEnum } from "../enums/enums";
+import { PathEnum } from "../../Enums/enums";
 import { loginUser, registerUser, setAuthStatus } from "../Reducer/authReducer";
-import { LoginUserDataType, RegisterUserDataType } from "../types";
+import { LoginUserDataType, RegisterUserDataType } from "../../Types/index";
 import { loginUserApi, registerUserApi } from "./api";
 
 function* registerUserSaga(action: PayloadAction<RegisterUserDataType>) {
